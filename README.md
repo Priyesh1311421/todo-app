@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todoist Clone
+
+A modern task management application built with Next.js, TypeScript, Tailwind CSS, and PostgreSQL.
+
+## Features
+
+- **User Authentication**: Secure email and password-based authentication
+- **Task Management**: Create, update, and delete tasks
+- **Priority Levels**: Assign priority levels to tasks (Low, Normal, High, Urgent)
+- **Due Dates**: Set and track due dates for tasks
+- **Categories**: Organize tasks into custom categories
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Tech Stack
+
+- **Frontend**:
+  - Next.js 14 (App Router)
+  - TypeScript
+  - Tailwind CSS
+  - shadcn/ui component library
+  - React-Hook-Form for form handling
+
+- **Backend**:
+  - Next.js API Routes
+  - NextAuth.js for authentication
+  - Prisma ORM for database operations
+
+- **Database**:
+  - PostgreSQL
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or newer)
+- npm or yarn
+- PostgreSQL database
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   Create a `.env` file in the root directory with the following variables:
+   ```
+   DATABASE_URL="postgresql://postgres:postgres@localhost:5432/todoist?schema=public"
+   NEXTAUTH_SECRET="your-nextauth-secret"
+   ```
+4. Initialize the database:
+   ```bash
+   npx prisma migrate dev --name init
+   ```
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- `/src/app`: Main application code using Next.js App Router
+  - `/api`: API routes for backend operations
+  - `/auth`: Authentication-related pages (signin, signup)
+  - `/dashboard`: Task management dashboard
+- `/src/components`: Reusable React components
+- `/prisma`: Prisma schema and migrations
+- `/public`: Static assets
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Database
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project uses Prisma ORM to interact with the PostgreSQL database. The schema is defined in `prisma/schema.prisma`.
 
-## Deploy on Vercel
+### Adding a New Feature
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Create necessary database models in `prisma/schema.prisma`
+2. Run `npx prisma migrate dev --name feature-name` to update the database
+3. Create API routes in `/src/app/api`
+4. Create UI components in `/src/components`
+5. Add pages in `/src/app`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License.
