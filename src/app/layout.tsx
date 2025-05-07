@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Todoist Clone",
-  description: "A task management application built with Next.js",
+  title: "TaskFlow",
+  description: "A modern task management application built with Next.js",
 };
 
 export default function RootLayout({

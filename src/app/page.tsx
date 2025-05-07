@@ -22,6 +22,9 @@ export default function Home() {
       <header className="bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6 py-16">
           <div className="flex flex-col items-center">
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">TaskFlow</h1>
+            </div>
             <h1 className="text-5xl font-bold text-center text-gray-800 dark:text-white mb-6">
               Manage Your Tasks with Ease
             </h1>
@@ -81,7 +84,7 @@ export default function Home() {
       <footer className="bg-white dark:bg-gray-900 py-8 mt-auto">
         <div className="container mx-auto px-6">
           <p className="text-center text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} Todo App. All rights reserved.
+            © {new Date().getFullYear()} TaskFlow. All rights reserved.
           </p>
         </div>
       </footer>
