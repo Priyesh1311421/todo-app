@@ -99,7 +99,7 @@ export default function DashboardLayout({
       >
         <div className="p-6 flex items-center justify-between">
           {isSidebarOpen ? (
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">TaskFlow</h1>
+            <h1 className="text-2xl font-bold dark:text-white bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent ">TaskFlow</h1>
           ) : (
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white hidden md:block">T</h1>
           )}

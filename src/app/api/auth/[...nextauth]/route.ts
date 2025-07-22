@@ -1,4 +1,4 @@
-import NextAuth, { AuthOptions, Session } from "next-auth"; // Import AuthOptions type
+import NextAuth, { AuthOptions, Session } from "next-auth"; 
 
 declare module "next-auth" {
   interface Session {
@@ -13,11 +13,11 @@ declare module "next-auth" {
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs"; // Corrected import
+import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-export const authOptions: AuthOptions = { // Add type annotation
+export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
